@@ -19,7 +19,7 @@ angular.module('Webmail', ["ngSanitize"])
         ]   },
         { value: "SPAM" , label: "Courrier indésirable", emails: [
             { id: 10, from: "Rue du discount", to: "Rudy", subject: "envie d'un frigo?", date: "22/09/2014", content: "lorem  ippsum frigo pachér"},
-            { id: 10, from: "Steam", to: "Rudy", subject: "too late bruh", date: "25/09/2014", content: "lorem  ippsum <strong>steam</strong> promozion"}
+            { id: 11, from: "Steam", to: "Rudy", subject: "too late bruh", date: "25/09/2014", content: "lorem  ippsum <strong>steam</strong> promozion"}
         ]   }
     ];
 
