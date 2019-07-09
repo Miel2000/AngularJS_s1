@@ -1,5 +1,5 @@
 angular.module('Webmail', ["ngSanitize"])
-    .controller('WebmailCtrl', function($scope, $location){
+    .controller('WebmailCtrl', function($scope, $location, $filter){
 
     $scope.dossiers  = [
         { value: "RECEPTION" , label: "Boite de reception", emails: [
@@ -65,6 +65,18 @@ angular.module('Webmail', ["ngSanitize"])
     }
 
 
+    // Recherche
+
+
+    $scope.razRecherche = function() {
+        $scope.recherche = "";
+    }
+
+
+    $scope.getDossierFiltres = function() {
+        console.log('getDossierFilterzz');
+      return  $filter('filter')($scope.dossierCourant.emails , $scope.recherche)
+    }
 
 
     $scope.$watch(function(){
