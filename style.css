@@ -1,3 +1,7 @@
+
+
+
+
 .spacer {
     margin-top: 20px;
 }
@@ -5,6 +9,10 @@
 
 .spacer li a {
     padding:0 50px;
+}
+
+.hSpacer {
+    padding-left:10px;
 }
 
 .table-hover > tbody > tr:hover > td,
@@ -15,4 +23,29 @@
 
 .clickable {
     cursor: pointer
+}
+
+a {
+    cursor:pointer;
+
+}
+
+
+.colDe {
+    width: 20%
+}
+
+
+.colA {
+    width: 15%
+}
+
+
+.colObject {
+    width: 45%
+}
+
+
+.colDate {
+    width: 15%;
 }

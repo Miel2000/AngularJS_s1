@@ -32,18 +32,30 @@
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
-                    <th>De</th>
-                    <th>&Agrave;</th>
-                    <th>Objet</th>
-                    <th>Date</th>
+                    <th class="colDe">
+                        <a ng-click="triEmails('from')">De</a>
+                        <span class="hSpacer" ng-class="cssChevronsTri('from')"></span>
+                    </th>
+                    <th class="colA">
+                        <a ng-click="triEmails('to')">&Agrave;</a>
+                        <span class="hSpacer" ng-class="cssChevronsTri('to')"></span>
+                    </th >
+                    <th class="colObject">
+                        <a ng-click="triEmails('subject')">Objet</a>
+                        <span class="hSpacer" ng-class="cssChevronsTri('subject')"></span>
+                    </th>
+                    <th class="colDate">
+                        <a ng-click="triEmails('date')">Date</a>
+                        <span class="hSpacer" ng-class="cssChevronsTri('date')"></span>
+                    </th>
                 </tr> 
             </thead>
             <tbody>
-                <tr ng-repeat="email in dossierCourant.emails" class="clickable" ng-click="versEmail(dossierCourant, email)">
+                <tr ng-repeat="email in dossierCourant.emails | orderBy:champTri:triDescendant" class="clickable" ng-click="versEmail(dossierCourant, email)">
                     <td>{{email.from}}</td>
                     <td>{{email.to}}</td>
                     <td>{{email.subject}}</td>
-                    <td>{{email.date}}</td>
+                    <td>{{email.date |  date:'short'}}</td>
                 </tr>
              
             </tbody>
@@ -67,6 +79,7 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular-sanitize.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-i18n/1.7.8/angular-locale_fr-fr.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script type="text/javascript" src="app.js"></script>
     </body>
