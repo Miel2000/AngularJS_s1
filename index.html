@@ -61,9 +61,9 @@
             </thead>
             <tbody>
                 <tr ng-repeat="email in emailsFiltres = (dossierCourant.emails | filter: recherche) | orderBy:champTri:triDescendant" class="clickable" ng-click="versEmail(dossierCourant, email)">
-                    <td>{{email.from}}</td>
-                    <td>{{email.to}}</td>
-                    <td>{{email.subject}}</td>
+                    <td ng-bind-html="email.from | surbrillanceRecherche:recherche"></td>
+                    <td ng-bind-html="email.to | surbrillanceRecherche:recherche"></td>
+                    <td ng-bind-html="email.subject | surbrillanceRecherche:recherche"></td>
                     <td>{{email.date |  date:'short'}}</td>
                 </tr>
              

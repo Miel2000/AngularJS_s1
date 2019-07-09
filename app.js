@@ -73,12 +73,7 @@ angular.module('Webmail', ["ngSanitize"])
     }
 
 
-    $scope.getDossierFiltres = function() {
-        console.log('getDossierFilterzz');
-      return  $filter('filter')($scope.dossierCourant.emails , $scope.recherche)
-    }
-
-
+ 
     $scope.$watch(function(){
       return   $location.path();
 
@@ -105,4 +100,12 @@ angular.module('Webmail', ["ngSanitize"])
    
 
 
+})
+.filter("surbrillanceRecherche", function(){
+    return function(input, recherche) {
+        if(recherche) {
+            return input.replace(new RegExp('(' + recherche + ')', "gi"),"<span class='surbrillanceRecherche'>$1</span>");
+        }
+        return input;
+    }
 })
